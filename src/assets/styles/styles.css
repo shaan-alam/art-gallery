@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,700&family=Quicksand:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+nav {
+  width: 100%;
+  background: #fafafa;
+}
+
+nav .container {
+  padding: 1.5rem 0;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container h3 {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #ef798a;
+}
+
+nav .container .actions {
+  padding: 0.5rem 0;
+}
+
+nav .container .actions label input {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+nav .container .actions label span {
+  font-family: "Quicksand", sans-serif;
+  background: #ef798a;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+nav .container .actions label span:hover {
+  background: #ea4b62;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-backdrop .modal-content {
+  width: 500px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop .modal-content header {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: #ef798a;
+  color: #fff;
+  padding: 1.3rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.modal-backdrop .modal-content .file-selector {
+  padding: 0 1rem;
+}
+
+.modal-backdrop .modal-content .file-selector .file-error {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #fff;
+  background: #613f75;
+  padding: 1rem;
+}
+
+.modal-backdrop .modal-content .file-selector .file-success {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #fff;
+  background: #00b300;
+  color: green;
+  padding: 1rem;
+}
+
+.modal-backdrop .modal-content label {
+  margin: 1rem 0;
+}
+
+.modal-backdrop .modal-content label input {
+  height: 0;
+  width: 0;
+}
+
+.modal-backdrop .modal-content label .file-placeholder {
+  height: 100px;
+  width: 100%;
+  border: 5px dashed #888;
+  border-radius: 8px;
+  color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-backdrop .modal-content label .file-placeholder:hover {
+  border: 5px dashed #555;
+  color: #555;
+}
+
+.modal-backdrop .modal-content .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+.modal-backdrop .modal-content .actions button {
+  margin-right: 12px;
+}
+
+.primary-btn {
+  font-family: "Quicksand", sans-serif;
+  outline: none;
+  background: #ef798a;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.primary-btn:hover {
+  background: #ea4b62;
+}
+
+.primary-btn:focus {
+  outline: none;
+}
+
+.danger-btn {
+  font-family: "Quicksand", sans-serif;
+  outline: none;
+  background: #888;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.danger-btn:hover {
+  background: #6f6f6f;
+}
+
+.danger-btn:focus {
+  outline: none;
+}
+
+.progress-bar {
+  height: 25px;
+  background-color: #888;
+  width: 100%;
+  color: #fff;
+  margin: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.progress-bar p {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .progress-width {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  background-color: #ef798a;
+  width: 0%;
+}
+/*# sourceMappingURL=styles.css.map */

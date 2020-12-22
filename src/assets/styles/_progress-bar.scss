@@ -1,0 +1,26 @@
+.progress-bar {
+  height: 25px;
+  background-color: $danger-color;
+  width: 100%;
+  color: #fff;
+  margin: 1rem 0;
+  text-align: center;
+  position: relative;
+
+  p {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .progress-width {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    background-color: $primary-color;
+    width: 0%;
+  }
+}

@@ -1,0 +1,39 @@
+.primary-btn {
+  @include font-quicksand;
+  outline: none;
+  background: $primary-color;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.danger-btn {
+  @include font-quicksand;
+  outline: none;
+  background: $danger-color;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    background: darken($danger-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
