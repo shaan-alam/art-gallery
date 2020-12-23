@@ -15,6 +15,7 @@ const ImgGrid = () => {
 
   return (
     <div className="container">
+      <h3>Newly Uploaded</h3>
       <div className="img-grid">
         {docs.map((doc) => (
           <motion.div className="img" key={doc.id} layout>

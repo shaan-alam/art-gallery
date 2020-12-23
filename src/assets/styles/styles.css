@@ -12,6 +12,11 @@
   overflow: hidden;
 }
 
+::selection {
+  background: #ef798a;
+  color: #fff;
+}
+
 nav {
   width: 100%;
   background: #fafafa;
@@ -152,7 +157,8 @@ nav .container .actions label span:hover {
   font-family: "Quicksand", sans-serif;
   outline: none;
   background: #ef798a;
-  padding: 0.8rem;
+  padding: 1rem 1.4rem;
+  display: block;
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -222,9 +228,8 @@ nav .container .actions label span:hover {
 .img-grid {
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
-  justify-items: center;
 }
 
 .img-grid .img {
@@ -235,5 +240,40 @@ nav .container .actions label span:hover {
 .img-grid .img img {
   width: 100%;
   height: 100%;
+}
+
+.search-bar {
+  padding: 3rem 4rem;
+  text-align: center;
+}
+
+.search-bar h1 {
+  font-family: "Noto Serif", serif;
+  font-size: 400%;
+  font-style: italic;
+  font-weight: bold;
+  color: #171d1c;
+}
+
+.search-bar .search-area {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+  grid-gap: 12px;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.search-bar .search-area input {
+  padding: 0.8rem;
+  background: #fff;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid #ef798a;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.search-bar .search-area input:focus {
+  box-shadow: 0 0 10px #f2909e;
 }
 /*# sourceMappingURL=styles.css.map */

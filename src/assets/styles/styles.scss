@@ -14,8 +14,14 @@
   overflow: hidden;
 }
 
+::selection {
+  background: $primary-color;
+  color: #fff;
+}
+
 @import "nav";
 @import "modal";
 @import "buttons";
 @import "progress-bar";
 @import "img-grid";
+@import "search-bar";
