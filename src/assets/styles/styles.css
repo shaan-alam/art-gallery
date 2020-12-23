@@ -6,6 +6,12 @@
   font-family: "Quicksand", sans-serif;
 }
 
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
 nav {
   width: 100%;
   background: #fafafa;
@@ -26,10 +32,6 @@ nav .container h3 {
   font-style: italic;
   font-weight: 700;
   color: #ef798a;
-}
-
-nav .container .actions {
-  padding: 0.5rem 0;
 }
 
 nav .container .actions label input {
@@ -57,12 +59,17 @@ nav .container .actions label span:hover {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-backdrop .modal-content-container {
+  padding: 0 1rem;
 }
 
 .modal-backdrop .modal-content {
@@ -73,6 +80,8 @@ nav .container .actions label span:hover {
 }
 
 .modal-backdrop .modal-content header {
+  display: flex;
+  justify-content: space-between;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background: #ef798a;
@@ -81,8 +90,9 @@ nav .container .actions label span:hover {
   margin-bottom: 2rem;
 }
 
-.modal-backdrop .modal-content .file-selector {
-  padding: 0 1rem;
+.modal-backdrop .modal-content header a {
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 .modal-backdrop .modal-content .file-selector .file-error {
@@ -97,7 +107,7 @@ nav .container .actions label span:hover {
   border-radius: 8px;
   margin-bottom: 1rem;
   color: #fff;
-  background: #00b300;
+  background: #00b30033;
   color: green;
   padding: 1rem;
 }
@@ -131,10 +141,10 @@ nav .container .actions label span:hover {
 .modal-backdrop .modal-content .actions {
   display: flex;
   justify-content: flex-end;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem 0;
 }
 
-.modal-backdrop .modal-content .actions button {
+.modal-backdrop .modal-content .actions .danger-btn {
   margin-right: 12px;
 }
 
@@ -179,7 +189,8 @@ nav .container .actions label span:hover {
 }
 
 .progress-bar {
-  height: 25px;
+  height: 5px;
+  border-radius: 8px;
   background-color: #888;
   width: 100%;
   color: #fff;
@@ -190,12 +201,15 @@ nav .container .actions label span:hover {
 
 .progress-bar p {
   position: absolute;
-  z-index: 2;
+  top: calc(100% + 8px);
   left: 50%;
+  color: #171d1c;
+  z-index: 2;
   transform: translateX(-50%);
 }
 
 .progress-bar .progress-width {
+  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
@@ -203,5 +217,23 @@ nav .container .actions label span:hover {
   height: 100%;
   background-color: #ef798a;
   width: 0%;
+}
+
+.img-grid {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.img-grid .img {
+  width: 200px;
+  height: 200px;
+}
+
+.img-grid .img img {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

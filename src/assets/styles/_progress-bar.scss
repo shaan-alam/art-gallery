@@ -1,5 +1,6 @@
 .progress-bar {
-  height: 25px;
+  height: 5px;
+  border-radius: 8px;
   background-color: $danger-color;
   width: 100%;
   color: #fff;
@@ -9,12 +10,15 @@
 
   p {
     position: absolute;
-    z-index: 2;
+    top: calc(100% + 8px);
     left: 50%;
+    color: $text-color;
+    z-index: 2;
     transform: translateX(-50%);
   }
 
   .progress-width {
+    border-radius: 8px;
     position: absolute;
     top: 0;
     left: 0;
