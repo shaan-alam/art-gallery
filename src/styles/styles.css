@@ -16,4 +16,112 @@
   background: #ef798a;
   color: #fff;
 }
+
+.signup-section {
+  background-color: #eee;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-section .signup-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.signup-section .signup-container h1 {
+  color: #333;
+}
+
+.signup-section .signup-container .form-group {
+  margin: 1rem 0;
+}
+
+.signup-section .signup-container .form-group .form-controls {
+  width: 100%;
+  transition: all 0.4s;
+  padding: 0.7rem 1rem;
+  border: 1px solid #f7bdc6;
+  border-radius: 8px;
+  outline: none;
+}
+
+.signup-section .signup-container .form-group .form-controls:focus {
+  border: 1px solid #ef798a;
+}
+
+.signup-section .signup-container .auth-btn.btn-primary {
+  padding: 1rem;
+  background: #ef798a;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.4s;
+  outline: none;
+}
+
+.signup-section .signup-container .auth-btn.btn-primary:disabled, .signup-section .signup-container .auth-btn.btn-primary[disabled] {
+  background: #777;
+}
+
+.signup-section .signup-container .auth-btn.btn-primary:disabled:hover, .signup-section .signup-container .auth-btn.btn-primary[disabled]:hover {
+  pointer-events: none;
+  cursor: normal;
+  background: #777;
+}
+
+.signup-section .signup-container .auth-btn.btn-primary:hover {
+  background: #ea4b62;
+}
+
+.divider {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 2rem auto;
+  height: 1px;
+  width: 100%;
+}
+
+.oauth {
+  margin: 1rem 0;
+}
+
+.oauth h3 {
+  color: #333;
+}
+
+.oauth .oauth-links {
+  margin: 1rem 0;
+}
+
+.oauth a {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.oauth a img {
+  margin-right: 8px;
+  width: 10%;
+}
+
+.alert-error {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #b99dca;
+  color: #613f75;
+  margin: 1rem 0;
+}
 /*# sourceMappingURL=styles.css.map */
