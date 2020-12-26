@@ -7,6 +7,8 @@ import firebase from "firebase";
 import {
   AUTH_FAIL,
   AUTH_SUCCESS,
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
   LOGOUT_FAIL,
   LOGOUT_SUCCESS,
   SET_USER,
@@ -72,5 +74,20 @@ export const signupWithGoogle = (redirect) => (dispatch) => {
         type: AUTH_FAIL,
         payload: err,
       });
+    });
+};
+
+export const signInWithEmailAndPassword = (email, password, redirect) => (
+  dispatch
+) => {
+  auth
+    .signInWithEmailAndPassword(email, password)
+    .then((result) => {
+      dispatch({ type: LOGIN_SUCCESS, payload: result.user });
+
+      redirect();
+    })
+    .catch((err) => {
+      dispatch({ type: LOGIN_FAIL, payload: err });
     });
 };

@@ -5,6 +5,7 @@ import { clearErrors } from "./Redux/Actions/ErrorActionCreators";
 
 // Custom components here
 import Signup from "./components/Signup";
+import Login from "./components/Login";
 import Home from "./components/Home";
 
 const App = ({ error, clearErrors }) => {
@@ -18,6 +19,7 @@ const App = ({ error, clearErrors }) => {
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} />
     </Switch>
   );
 };
