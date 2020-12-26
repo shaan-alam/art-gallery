@@ -1,20 +1,19 @@
 import { useRef, useState } from "react";
 import { connect } from "react-redux";
 import {
-  signupWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signupWithGoogle,
 } from "../Redux/Actions/AuthActionCreators";
 import { Link } from "react-router-dom";
 
-const Signup = ({
-  signupWithEmailAndPassword,
+const Login = ({
+  signInWithEmailAndPassword,
   error,
   history,
   signupWithGoogle,
 }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
 
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
@@ -23,7 +22,7 @@ const Signup = ({
 
     setIsAuthenticating(true);
 
-    signupWithEmailAndPassword(
+    signInWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value,
       () => history.push("/")
@@ -39,9 +38,9 @@ const Signup = ({
   };
 
   return (
-    <section className="signup-section">
-      <div className="signup-container">
-        <h1>Signup</h1>
+    <section className="login-section">
+      <div className="login-container">
+        <h1>Login</h1>
         {error && <div className="alert-error">{error.message}</div>}
         <form onSubmit={handleFormVerification}>
           <div className="form-group">
@@ -60,37 +59,29 @@ const Signup = ({
               placeholder="Choose a Password"
             />
           </div>
-          <div className="form-group">
-            <input
-              type="password"
-              ref={passwordConfirmRef}
-              className="form-controls"
-              placeholder="Confirm Password"
-            />
-          </div>
           <button
             type="submit"
             disabled={isAuthenticating}
             className="auth-btn btn-primary"
           >
-            {isAuthenticating ? "Authenticating..." : "Signup"}
+            {isAuthenticating ? "Authenticating..." : "Login"}
           </button>
         </form>
         <div className="divider"></div>
         <div className="signup-link">
           <p>
-            Already have an account? <Link to="/login">Login here</Link>
+            Not a member yet? <Link to="/signup">Signup here</Link>
           </p>
         </div>
         <div className="oauth">
-          <h3>Or Sign up using</h3>
+          <h3>Or Login using</h3>
           <div className="oauth-links">
             <a href="#!" onClick={handleGoogleLogin}>
               <img
                 src="https://img.icons8.com/color/452/google-logo.png"
                 alt="Google"
               />{" "}
-              <span>oogle</span>
+              <span>Google</span>
             </a>
           </div>
         </div>
@@ -106,6 +97,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  signupWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signupWithGoogle,
-})(Signup);
+})(Login);

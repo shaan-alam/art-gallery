@@ -11,7 +11,7 @@ const Home = ({ history, logout, setUser }) => {
       if (user !== null) {
         setUser(user);
       } else {
-        history.push("/signup");
+        history.push("/login");
       }
     });
   }, []);
