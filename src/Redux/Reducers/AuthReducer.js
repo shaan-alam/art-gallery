@@ -3,10 +3,12 @@ import {
   AUTH_SUCCESS,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+  SET_USER,
 } from "../Actions/ActionTypes";
 
 const initialState = {
-  currentUser: {},
+  currentUser: null,
 };
 
 function AuthReducer(state = initialState, action) {
@@ -20,9 +22,16 @@ function AuthReducer(state = initialState, action) {
 
     case AUTH_SUCCESS:
     case LOGIN_SUCCESS:
+    case SET_USER:
       return {
         ...state,
         currentUser: action.payload,
+      };
+
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: {},
       };
 
     default:
