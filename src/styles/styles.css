@@ -241,7 +241,6 @@ nav .nav-menu a {
 }
 
 nav .dropdown img {
-  cursor: pointer;
   width: 25%;
   border-radius: 50%;
   margin-right: 8px;
@@ -309,5 +308,11 @@ nav .dropdown .dropdown-content::before {
 .dropdown-user-avatar {
   display: flex;
   align-items: center;
+}
+
+.dropdown-user-avatar .dropdown-toggler {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: normal;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const linkVariants = {
   initial: {
-    y: "-40%",
+    y: "40%",
   },
   animate: {
     y: 0,
@@ -15,19 +15,25 @@ const linkVariants = {
     delay: 1,
   },
   exit: {
-    y: "-40%",
+    y: "40%",
   },
 };
 
 const dropdownContainerVariants = {
   initial: {
+    y: "20%",
     opacity: 0,
   },
   animate: {
+    y: "0%",
     opacity: 1,
   },
   exit: {
     opacity: 0,
+    y: "20%",
+  },
+  transition: {
+    stiffness: 280,
   },
 };
 
@@ -41,10 +47,7 @@ const NavbarDropdown = ({ currentUser, logout }) => {
 
   return (
     <div className="dropdown">
-      <div
-        className="dropdown-user-avatar"
-        onClick={() => setDropdown(!dropdown)}
-      >
+      <div className="dropdown-user-avatar">
         <img
           title={currentUser.displayName}
           src={
@@ -53,7 +56,11 @@ const NavbarDropdown = ({ currentUser, logout }) => {
           }
           alt="User Avatar"
         />
-        <a href="#!">
+        <a
+          href="#!"
+          className="dropdown-toggler"
+          onClick={() => setDropdown(!dropdown)}
+        >
           <i className="fa fa-chevron-down"></i>
         </a>
       </div>
@@ -64,6 +71,7 @@ const NavbarDropdown = ({ currentUser, logout }) => {
             variants={dropdownContainerVariants}
             initial="initial"
             animate="animate"
+            transition="transition"
             exit="exit"
           >
             <div className="dropdown-content-user-info">
@@ -72,28 +80,28 @@ const NavbarDropdown = ({ currentUser, logout }) => {
             </div>
             <div className="divider"></div>
             <ul>
-              <motion.a
-                href="#!"
-                variants={linkVariants}
-                initial="initial"
-                animate="animate"
-                transition="transition"
-                exit="exit"
-              >
-                <li>View Profile</li>
-              </motion.a>
-
-              <motion.a
-                href="#!"
-                onClick={handleLogout}
-                variants={linkVariants}
-                initial="initial"
-                animate="animate"
-                transition="transition"
-                exit="exit"
-              >
-                <li>Logout</li>
-              </motion.a>
+              <a href="#!">
+                <motion.li
+                  variants={linkVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition="transition"
+                >
+                  View Profile
+                </motion.li>
+              </a>
+              <a href="#!" onClick={handleLogout}>
+                <motion.li
+                  variants={linkVariants}
+                  initial="initial"
+                  animate="animate"
+                  transition="transition"
+                  exit="exit"
+                >
+                  Logout
+                </motion.li>
+              </a>
             </ul>
           </motion.div>
         )}
