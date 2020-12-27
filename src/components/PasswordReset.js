@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/config";
+import Modal from "./Modal";
 
 const PasswordReset = ({ setModal }) => {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ const PasswordReset = ({ setModal }) => {
   };
 
   return (
-    <div className="modal-backdrop">
+    <Modal>
       <div className="password-reset-link-container">
         <a href="#!" onClick={() => setModal(false)} className="close-modal">
           <i className="fa fa-times"></i>
@@ -52,7 +53,7 @@ const PasswordReset = ({ setModal }) => {
           Send Password Reset Link
         </button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
