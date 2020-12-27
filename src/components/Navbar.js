@@ -1,28 +1,22 @@
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import NavbarDropdown from "./NavbarDropdown";
 
-const Navbar = ({ currentUser }) => {
+const Navbar = () => {
   return (
     <nav>
       <div className="container">
-        <Link to="/">
-          <h3>Art Gallery</h3>
+        <Link to="/" className="heading">
+          <h2>Art Gallery</h2>
         </Link>
         <div className="nav-menu">
-          <a href="#!">Upload</a>
-          <div className="dropdown">
-            <img src={currentUser.photoURL} alt="" />
-          </div>
+          <a href="#!">
+            <i className="fa fa-plus"></i> Upload
+          </a>
+          <NavbarDropdown />
         </div>
       </div>
     </nav>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    currentUser: state.auth.currentUser,
-  };
-};
-
-export default connect(mapStateToProps)(Navbar);
+export default Navbar;
