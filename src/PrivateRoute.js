@@ -1,20 +1,26 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
-import { auth } from "./firebase/config";
 
-export default function PrivateRoute({ component: Component, ...rest }) {
-  const currentUser = auth.currentUser;
-
+function PrivateRoute({ component: Component, currentUser, ...rest }) {
   return (
     <Route
       {...rest}
       render={(props) => {
-        return currentUser ? (
+        return currentUser !== null ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to={{ pathname: "/login" }} />
         );
       }}
     ></Route>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.auth.currentUser,
+  };
+};
+
+export default connect(mapStateToProps)(PrivateRoute);
