@@ -5,6 +5,7 @@ import {
   signupWithGoogle,
 } from "../Redux/Actions/AuthActionCreators";
 import { Link } from "react-router-dom";
+import PasswordReset from "./PasswordReset";
 
 const Login = ({
   signInWithEmailAndPassword,
@@ -16,6 +17,7 @@ const Login = ({
   const passwordRef = useRef();
 
   const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const handleFormVerification = (e) => {
     e.preventDefault();
@@ -67,6 +69,16 @@ const Login = ({
             {isAuthenticating ? "Authenticating..." : "Login"}
           </button>
         </form>
+        <div className="forgot-pass-link-container">
+          <a
+            href="#!"
+            className="forgot-pass-link"
+            onClick={() => setModal(true)}
+          >
+            Forgot Password
+          </a>
+          {modal && <PasswordReset setModal={setModal} />}
+        </div>
         <div className="divider"></div>
         <div className="signup-link">
           <p>
