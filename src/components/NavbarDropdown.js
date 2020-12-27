@@ -72,26 +72,28 @@ const NavbarDropdown = ({ currentUser, logout }) => {
             </div>
             <div className="divider"></div>
             <ul>
-              <motion.li
+              <motion.a
+                href="#!"
                 variants={linkVariants}
                 initial="initial"
                 animate="animate"
                 transition="transition"
                 exit="exit"
               >
-                <a href="#!">View Profile</a>
-              </motion.li>
-              <motion.li
+                <li>View Profile</li>
+              </motion.a>
+
+              <motion.a
+                href="#!"
+                onClick={handleLogout}
                 variants={linkVariants}
                 initial="initial"
                 animate="animate"
                 transition="transition"
                 exit="exit"
               >
-                <a href="#!" onClick={handleLogout}>
-                  Logout
-                </a>
-              </motion.li>
+                <li>Logout</li>
+              </motion.a>
             </ul>
           </motion.div>
         )}

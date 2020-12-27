@@ -35,7 +35,7 @@ nav {
   .dropdown {
     img {
       cursor: pointer;
-      width: 40%;
+      width: 25%;
       border-radius: 50%;
       margin-right: 8px;
     }
@@ -43,7 +43,7 @@ nav {
     .dropdown-content {
       position: absolute;
       top: 12%;
-      right: 6%;
+      right: 8%;
       z-index: 10;
       width: 240px;
       border-radius: 8px;
@@ -86,17 +86,17 @@ nav {
     margin: 0 0 10px 0;
     list-style: none;
 
-    li {
-      padding: 0.3rem 1rem;
+    a {
+      font-size: 14px;
+      transition: all 0.4s;
+      color: #333;
+      
+      li {
+        padding: 0.3rem 1rem;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.0523);
-      }
-
-      a {
-        font-size: 14px;
-        transition: all 0.4s;
-        color: #333;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.0523);
+        }
       }
     }
   }

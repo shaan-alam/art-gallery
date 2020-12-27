@@ -242,7 +242,7 @@ nav .nav-menu a {
 
 nav .dropdown img {
   cursor: pointer;
-  width: 40%;
+  width: 25%;
   border-radius: 50%;
   margin-right: 8px;
 }
@@ -250,7 +250,7 @@ nav .dropdown img {
 nav .dropdown .dropdown-content {
   position: absolute;
   top: 12%;
-  right: 6%;
+  right: 8%;
   z-index: 10;
   width: 240px;
   border-radius: 8px;
@@ -292,18 +292,18 @@ nav .dropdown .dropdown-content::before {
   list-style: none;
 }
 
-.dropdown-content ul li {
-  padding: 0.3rem 1rem;
-}
-
-.dropdown-content ul li:hover {
-  background-color: rgba(0, 0, 0, 0.0523);
-}
-
-.dropdown-content ul li a {
+.dropdown-content ul a {
   font-size: 14px;
   transition: all 0.4s;
   color: #333;
+}
+
+.dropdown-content ul a li {
+  padding: 0.3rem 1rem;
+}
+
+.dropdown-content ul a li:hover {
+  background-color: rgba(0, 0, 0, 0.0523);
 }
 
 .dropdown-user-avatar {
