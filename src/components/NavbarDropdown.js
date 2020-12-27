@@ -19,6 +19,18 @@ const linkVariants = {
   },
 };
 
+const dropdownContainerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
 const NavbarDropdown = ({ currentUser, logout }) => {
   const history = useHistory();
   const [dropdown, setDropdown] = useState(false);
@@ -49,9 +61,10 @@ const NavbarDropdown = ({ currentUser, logout }) => {
         {dropdown && (
           <motion.div
             className="dropdown-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            variants={dropdownContainerVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
           >
             <div className="dropdown-content-user-info">
               <h2>{currentUser.displayName}</h2>
