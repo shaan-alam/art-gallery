@@ -1,0 +1,25 @@
+.btn-primary {
+  &:disabled,
+  &[disabled] {
+    background: #777;
+    &:hover {
+      pointer-events: none;
+      cursor: normal;
+      background: #777;
+    }
+  }
+
+  padding: 1rem;
+  background: $primary-color;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.4s;
+  outline: none;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
