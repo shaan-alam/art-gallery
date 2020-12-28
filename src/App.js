@@ -1,15 +1,34 @@
-import Nav from "./components/Nav";
-import ImgGrid from "./components/ImgGrid";
-import SearchBar from "./components/SearchBar";
+import { useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import { clearErrors } from "./Redux/Actions/ErrorActionCreators";
 
-const App = () => {
+// Custom components here
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import PrivateRoute from "./PrivateRoute";
+
+const App = ({ error, clearErrors }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      clearErrors();
+    }, 5000);
+  }, [error]);
+
   return (
-    <>
-      <Nav />
-      <SearchBar />
-      <ImgGrid />
-    </>
+    <Switch>
+      <PrivateRoute path="/" component={Home} exact />
+      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} />
+    </Switch>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    error: state.error.error,
+  };
+};
+
+export default connect(mapStateToProps, { clearErrors })(App);
