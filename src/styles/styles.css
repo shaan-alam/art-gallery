@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: 80%;
+  width: 70%;
   margin: auto;
   overflow: hidden;
 }
@@ -44,7 +44,8 @@
 .signup-section .login-container h1,
 .login-section .signup-container h1,
 .login-section .login-container h1 {
-  color: #333;
+  font-family: "Noto Serif", serif;
+  color: #171d1c;
 }
 
 .form-group {
@@ -72,11 +73,12 @@
 }
 
 .oauth {
-  margin: 1rem 0;
+  margin: 2.5rem 0;
 }
 
 .oauth h3 {
-  color: #333;
+  font-family: "Noto Serif", serif;
+  color: #171d1c;
 }
 
 .oauth .oauth-links {
@@ -89,7 +91,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: #171d1c;
   font-weight: 600;
 }
 
@@ -100,7 +102,7 @@
 
 .signup-link,
 .login-link {
-  color: #333;
+  color: #171d1c;
   font-size: 0.8rem;
 }
 
@@ -207,7 +209,8 @@
 
 nav {
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 2rem;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,6 +224,7 @@ nav header {
 }
 
 nav header h3 {
+  font-weight: bold;
   color: #ef798a;
   font-style: italic;
   font-family: "Noto Serif", serif;
@@ -266,6 +270,7 @@ nav .nav-menu ul.nav-menu-list {
 }
 
 nav .nav-menu ul.nav-menu-list li a {
+  font-size: 0.9rem;
   color: #333;
   text-decoration: none;
 }
@@ -281,6 +286,7 @@ nav .user-dropdown .user-avatar {
 }
 
 nav .user-dropdown .user-avatar h3 {
+  font-size: 100%;
   margin-right: 10px;
   color: #333;
 }
@@ -361,5 +367,34 @@ nav .user-info-submenu.active-submenu a:hover {
   .nav-menu.active ul.nav-menu-list li img {
     width: 10%;
   }
+}
+
+header {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+header h1 {
+  margin-top: 2rem;
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 300%;
+  color: #171d1c;
+}
+
+header h5 {
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  color: #445653;
+  font-size: 100%;
+}
+
+header form {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 3fr 0.5fr;
+  grid-gap: 1rem;
 }
 /*# sourceMappingURL=styles.css.map */

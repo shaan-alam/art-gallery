@@ -13,6 +13,7 @@ const Navbar = ({ currentUser, logout }) => {
     logout(() => history.push("/login"));
   };
 
+
   return (
     <nav>
       <header className="nav-heading">

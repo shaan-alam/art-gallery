@@ -1,0 +1,28 @@
+header {
+  text-align: center;
+  margin: 1rem 0;
+
+  h1 {
+    margin-top: 2rem;
+    @include font-noto;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 300%;
+    color: $text-color;
+  }
+
+  h5 {
+    font-weight: normal;
+    @include font-poppins;
+    font-style: normal;
+    color: lighten($text-color, 20%);
+    font-size: 100%;
+  }
+
+  form {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 3fr 0.5fr;
+    grid-gap: 1rem;
+  }
+}
