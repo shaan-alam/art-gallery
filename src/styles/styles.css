@@ -214,7 +214,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.123);
 }
 
 nav header {
@@ -242,7 +241,7 @@ nav header .navbar-toggler {
   display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   nav header .navbar-toggler {
     display: block;
   }
@@ -263,7 +262,7 @@ nav .nav-menu ul.nav-menu-list {
   list-style: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   nav .nav-menu ul.nav-menu-list {
     display: none;
   }
@@ -297,7 +296,7 @@ nav .user-dropdown .user-avatar img {
   border-radius: 50%;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   nav .user-dropdown .user-avatar img {
     display: none;
   }
@@ -307,7 +306,7 @@ nav .user-info-submenu {
   display: none;
   position: absolute;
   width: calc(100% + 30px);
-  top: calc(100% + 10px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   display: none;
@@ -320,7 +319,7 @@ nav .user-info-submenu {
   list-style: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   nav .user-info-submenu {
     width: 100%;
     box-shadow: none;
@@ -331,9 +330,9 @@ nav .user-info-submenu.active-submenu {
   display: flex;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   nav .user-info-submenu.active-submenu a {
-    background: #eee;
+    background: rgba(0, 0, 0, 0.0122);
     padding: 0 !important;
   }
 }
@@ -346,9 +345,10 @@ nav .user-info-submenu.active-submenu a:hover {
   background: rgba(0, 0, 0, 0.123);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .nav-menu.active ul.nav-menu-list {
     display: flex;
+    box-shadow: 0 20px 13px rgba(0, 0, 0, 0.0623);
     background: #fff;
     color: #fff;
     flex-direction: column;
@@ -383,6 +383,12 @@ header h1 {
   color: #171d1c;
 }
 
+@media screen and (max-width: 425px) {
+  header h1 {
+    font-size: 190%;
+  }
+}
+
 header h5 {
   font-weight: normal;
   font-family: "Poppins", sans-serif;
@@ -391,10 +397,28 @@ header h5 {
   font-size: 100%;
 }
 
+@media screen and (max-width: 425px) {
+  header h5 {
+    font-size: 70%;
+  }
+}
+
 header form {
   margin: 2rem 0;
   display: grid;
   grid-template-columns: 3fr 0.5fr;
   grid-gap: 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  header form {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header form input {
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,10 @@ header {
   margin: 1rem 0;
 
   h1 {
+    @include mobile-l {
+      font-size: 190%;
+    }
+
     margin-top: 2rem;
     @include font-noto;
     font-weight: bold;
@@ -12,6 +16,10 @@ header {
   }
 
   h5 {
+    @include mobile-l {
+      font-size: 70%;
+    }
+
     font-weight: normal;
     @include font-poppins;
     font-style: normal;
@@ -24,5 +32,15 @@ header {
     display: grid;
     grid-template-columns: 3fr 0.5fr;
     grid-gap: 1rem;
+
+    @include mobile-l {
+      display: block;
+    }
+
+    input {
+      @include mobile-l {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

@@ -13,7 +13,6 @@ const Navbar = ({ currentUser, logout }) => {
     logout(() => history.push("/login"));
   };
 
-
   return (
     <nav>
       <header className="nav-heading">
@@ -34,9 +33,9 @@ const Navbar = ({ currentUser, logout }) => {
             </Link>
           </li>
           <li>
-            <Link>
+            <a href="#!">
               <i className="fa fa-plus"></i> Upload
-            </Link>
+            </a>
           </li>
           <li className="user-dropdown">
             <div className="user-avatar">

@@ -5,7 +5,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.123);
 
   header {
     flex: 2;
@@ -28,7 +27,7 @@ nav {
       color: #333;
       display: none;
 
-      @include mobile-l {
+      @include tablet {
         display: block;
       }
     }
@@ -44,7 +43,7 @@ nav {
     }
 
     ul.nav-menu-list {
-      @include mobile-l {
+      @include tablet {
         display: none;
       }
 
@@ -80,7 +79,7 @@ nav {
         width: 15%;
         border-radius: 50%;
 
-        @include mobile-l {
+        @include tablet {
           display: none;
         }
       }
@@ -90,14 +89,14 @@ nav {
   .user-info-submenu {
     display: none;
 
-    @include mobile-l {
+    @include tablet {
       width: 100%;
       box-shadow: none;
     }
 
     position: absolute;
     width: calc(100% + 30px);
-    top: calc(100% + 10px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     display: none;
@@ -112,9 +111,9 @@ nav {
     &.active-submenu {
       display: flex;
 
-      @include mobile-l {
+      @include tablet {
         a {
-          background: #eee;
+          background: rgba(0, 0, 0, 0.0122);
           padding: 0 !important;
         }
       }
@@ -132,8 +131,9 @@ nav {
 
 .nav-menu.active {
   ul.nav-menu-list {
-    @include mobile-l {
+    @include tablet {
       display: flex;
+      box-shadow: 0 20px 13px rgba(0, 0, 0, 0.0623);
       background: #fff;
       color: #fff;
       flex-direction: column;
