@@ -209,12 +209,34 @@ nav {
   width: 100%;
   padding: 1rem 0;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.123);
+  position: relative;
+}
+
+nav .navbar-toggler {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 425px) {
+  nav .navbar-toggler {
+    display: block;
+  }
 }
 
 nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  nav .container {
+    flex-direction: column;
+  }
 }
 
 nav .heading {
@@ -229,15 +251,35 @@ nav .heading:focus {
 }
 
 nav .container .nav-menu {
-  width: 25%;
+  width: 50%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
+@media screen and (max-width: 425px) {
+  nav .container .nav-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .container .nav-menu.active {
+    margin-top: 1rem;
+    display: flex;
+  }
+}
+
 nav .nav-menu a {
+  margin-right: 12px;
   text-decoration: none;
-  color: #ef798a;
+  color: #333;
+}
+
+@media screen and (max-width: 425px) {
+  nav .dropdown {
+    display: none;
+  }
 }
 
 nav .dropdown img {

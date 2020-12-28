@@ -2,11 +2,29 @@ nav {
   width: 100%;
   padding: 1rem 0;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.123);
+  position: relative;
+
+  .navbar-toggler {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+
+    @include mobile-l {
+      display: block;
+    }
+  }
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile-l {
+      flex-direction: column;
+    }
   }
 
   .heading {
@@ -21,18 +39,35 @@ nav {
   }
 
   .container .nav-menu {
-    width: 25%;
+    @include mobile-l {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        margin-top: 1rem;
+        display: flex;
+      }
+    }
+
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
 
   .nav-menu a {
+    margin-right: 12px;
     text-decoration: none;
-    color: $primary-color;
+    color: #333;
   }
 
   .dropdown {
+    @include mobile-l {
+      display: none;
+    }
+
     img {
       width: 25%;
       border-radius: 50%;
