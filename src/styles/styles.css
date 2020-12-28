@@ -180,7 +180,8 @@
   transition: all 0.4s;
 }
 
-.modal-backdrop .password-reset-link-container {
+.modal-backdrop .password-reset-link-container,
+.modal-backdrop .upload-modal-container {
   position: relative;
   background: #fff;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
@@ -189,11 +190,13 @@
   text-align: center;
 }
 
-.modal-backdrop .password-reset-link-container input {
+.modal-backdrop .password-reset-link-container input,
+.modal-backdrop .upload-modal-container input {
   margin-bottom: 1rem;
 }
 
-.modal-backdrop .password-reset-link-container .close-modal {
+.modal-backdrop .password-reset-link-container .close-modal,
+.modal-backdrop .upload-modal-container .close-modal {
   position: absolute;
   top: 1rem;
   right: 2rem;
@@ -205,6 +208,39 @@
 .modal-backdrop .password-reset-link-container h3 {
   color: #333;
   margin-bottom: 1rem;
+}
+
+.upload-modal-container {
+  min-width: 400px;
+}
+
+.upload-modal-container h1 {
+  font-family: "Noto Serif", serif;
+  color: #171d1c;
+  font-size: 200%;
+  margin-bottom: 1rem;
+}
+
+.upload-modal-container .file-placeholder input {
+  height: 0;
+  width: 0;
+}
+
+.upload-modal-container .file-placeholder label .file-box {
+  height: 100px;
+  width: 100%;
+  border: 5px dashed #666666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.upload-modal-container .file-placeholder label .file-box:hover {
+  border-color: #333;
+  color: #333;
 }
 
 nav {

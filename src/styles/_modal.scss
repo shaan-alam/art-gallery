@@ -12,7 +12,8 @@
   align-items: center;
   transition: all 0.4s;
 
-  .password-reset-link-container {
+  .password-reset-link-container,
+  .upload-modal-container {
     position: relative;
     background: #fff;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
@@ -25,7 +26,8 @@
     }
   }
 
-  .password-reset-link-container .close-modal {
+  .password-reset-link-container .close-modal,
+  .upload-modal-container .close-modal {
     position: absolute;
     top: 1rem;
     right: 2rem;
@@ -37,5 +39,42 @@
   .password-reset-link-container h3 {
     color: #333;
     margin-bottom: 1rem;
+  }
+}
+
+.upload-modal-container {
+  min-width: 400px;
+
+  h1 {
+    @include font-noto;
+    color: $text-color;
+    font-size: 200%;
+    margin-bottom: 1rem;
+  }
+
+  .file-placeholder {
+    input {
+      height: 0;
+      width: 0;
+    }
+  }
+
+  .file-placeholder label {
+    .file-box {
+      height: 100px;
+      width: 100%;
+      border: 5px dashed lighten(#333, 20%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: lighten(#333, 20%);
+      cursor: pointer;
+
+      &:hover {
+        border-color: #333;
+        color: #333;
+      }
+      margin-bottom: 1rem;
+    }
   }
 }

@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../Redux/Actions/AuthActionCreators";
+import UploadModal from "./UploadModal";
 
 const Navbar = ({ currentUser, logout }) => {
   const [navMenu, setNavMenu] = useState(false);
   const [navSubMenu, setNavSubMenu] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const history = useHistory();
 
@@ -33,7 +35,7 @@ const Navbar = ({ currentUser, logout }) => {
             </Link>
           </li>
           <li>
-            <a href="#!">
+            <a href="#!" onClick={() => setModal(true)}>
               <i className="fa fa-plus"></i> Upload
             </a>
           </li>
@@ -68,6 +70,7 @@ const Navbar = ({ currentUser, logout }) => {
           </li>
         </ul>
       </div>
+      {modal && <UploadModal setModal={setModal} />}
     </nav>
   );
 };
