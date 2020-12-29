@@ -1,6 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { auth } from "../firebase/config";
 import Modal from "./Modal";
+import { motion } from "framer-motion";
+
+const modalVariants = {
+  initial: {
+    opacity: 0,
+    y: "30%",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+  transition: {
+    type: "tween",
+  },
+  exit: {
+    opacity: 0,
+    y: "30%",
+  },
+};
 
 const PasswordReset = ({ setModal }) => {
   const [email, setEmail] = useState("");
@@ -16,7 +35,14 @@ const PasswordReset = ({ setModal }) => {
 
   return (
     <Modal setModal={setModal}>
-      <div className="password-reset-link-container">
+      <motion.div
+        className="password-reset-link-container"
+        variants={modalVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition="transition"
+      >
         <a href="#!" onClick={() => setModal(false)} className="close-modal">
           <i className="fa fa-times"></i>
         </a>
@@ -33,7 +59,7 @@ const PasswordReset = ({ setModal }) => {
         <button onClick={handlePasswordReset} className="btn-primary">
           Send Password Reset Link
         </button>
-      </div>
+      </motion.div>
     </Modal>
   );
 };

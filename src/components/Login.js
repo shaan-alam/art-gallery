@@ -6,6 +6,7 @@ import {
 } from "../Redux/Actions/AuthActionCreators";
 import { Link } from "react-router-dom";
 import PasswordReset from "./PasswordReset";
+import { AnimatePresence } from "framer-motion";
 
 const Login = ({
   signInWithEmailAndPassword,
@@ -77,7 +78,9 @@ const Login = ({
           >
             Forgot Password
           </a>
-          {modal && <PasswordReset setModal={setModal} />}
+          <AnimatePresence>
+            {modal && <PasswordReset setModal={setModal} />}
+          </AnimatePresence>
         </div>
         <div className="divider"></div>
         <div className="signup-link">

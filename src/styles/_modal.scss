@@ -63,18 +63,19 @@
     .file-box {
       height: 100px;
       width: 100%;
+      padding: 1rem;
       border: 5px dashed lighten(#333, 20%);
       display: flex;
       justify-content: center;
       align-items: center;
       color: lighten(#333, 20%);
       cursor: pointer;
+      margin-bottom: 1rem;
 
       &:hover {
         border-color: #333;
         color: #333;
       }
-      margin-bottom: 1rem;
     }
   }
 }

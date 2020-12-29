@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../Redux/Actions/AuthActionCreators";
 import UploadModal from "./UploadModal";
+import { AnimatePresence } from "framer-motion";
 
 const Navbar = ({ currentUser, logout }) => {
   const [navMenu, setNavMenu] = useState(false);
@@ -63,14 +64,16 @@ const Navbar = ({ currentUser, logout }) => {
               <Link to="profile">
                 <li>View Profile</li>
               </Link>
-              <Link onClick={handleLogout}>
+              <Link to="/login" onClick={handleLogout}>
                 <li> Logout</li>
               </Link>
             </ul>
           </li>
         </ul>
       </div>
-      {modal && <UploadModal setModal={setModal} />}
+      <AnimatePresence>
+        {modal && <UploadModal setModal={setModal} />}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -19,7 +19,7 @@ const Signup = ({
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   const handleFormVerification = (e) => {
-    e.preventDefault();    
+    e.preventDefault();
 
     setIsAuthenticating(true);
 
