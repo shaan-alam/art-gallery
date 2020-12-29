@@ -7,7 +7,10 @@ export const LOGOUT_FAIL = "LOGOUT_FAIL";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 
 export const SET_USER = "SET_USER";
-export const SIGNUP_WITH_EMAIL_AND_PASSWORD = "SIGNUP_WITH_EMAIL_AND_PASSWORD";
 
+// Errors related action types
 export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+
+// Arts related action types
+export const GET_ARTS = "GET_ARTS";
