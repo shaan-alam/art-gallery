@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: 70%;
+  width: 80%;
   margin: auto;
   overflow: hidden;
 }
@@ -166,7 +166,7 @@
 }
 
 .modal-backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -476,5 +476,38 @@ header form {
 
 .progress-bar-container p {
   color: #445653;
+}
+
+.art-grid {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.art-grid .art {
+  border: 1px solid rgba(0, 0, 0, 0.123);
+  border-radius: 8px;
+}
+
+.art-grid .art img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+}
+
+.art-grid .uploaded-by {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.art-grid .uploaded-by img {
+  margin-right: 10px;
+  color: #171d1c;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
 /*# sourceMappingURL=styles.css.map */

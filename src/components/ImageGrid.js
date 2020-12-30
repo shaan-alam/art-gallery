@@ -17,4 +17,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(null, mapStateToProps)(ImageGrid);
+export default connect(mapStateToProps)(ImageGrid);

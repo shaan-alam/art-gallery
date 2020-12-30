@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header>
       <h1>Art Gallery</h1>
-      <h5>Search your perfect Art here!!!</h5>
-      <form action="">
+      <h5>See your perfect Art here!!!</h5>
+      {/* <form action="">
         <input
           type="text"
           placeholder="Search..."
@@ -16,7 +16,7 @@ const Header = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
         <button className="btn-primary">Search</button>
-      </form>
+      </form> */}
     </header>
   );
 };

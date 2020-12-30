@@ -3,8 +3,9 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import ImageGrid from "./ImageGrid";
 import { getArts } from "../Redux/Actions/ArtActionCreator";
+import { connect } from "react-redux";
 
-const Home = () => {
+const Home = ({ getArts }) => {
   useEffect(() => {
     getArts();
   }, []);
@@ -14,10 +15,10 @@ const Home = () => {
       <Navbar />
       <div className="container">
         <Header />
-        {/* <ImageGrid /> */}
+        <ImageGrid />
       </div>
     </>
   );
 };
 
-export default Home;
+export default connect(null, { getArts })(Home);
