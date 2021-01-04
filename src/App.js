@@ -14,11 +14,11 @@ const App = ({ error, clearErrors }) => {
     setTimeout(() => {
       clearErrors();
     }, 5000);
-  }, [error]);
+  }, [clearErrors, error]);
 
   return (
     <Switch>
-      <OperatorOperator path="/" component={Home} exact />
+      <PrivateRoute path="/" component={Home} exact />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
     </Switch>
