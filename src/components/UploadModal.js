@@ -47,7 +47,14 @@ const UploadModal = ({ setModal }) => {
   console.log(progress, error, url);
 
   const handleFile = (e) => {
-    setFile(e.target.files[0]);
+    // Check for allowed image types
+    const allowedTypes = ["image/jpeg", "image/gif", "image/png"];
+
+    if (allowedTypes.includes(e.target.files[0].type)) {
+      setFile(e.target.files[0]);
+    } else {
+      setError("Only GIF, JPEG and PNG files are allowed");
+    }
   };
 
   return (
@@ -71,6 +78,15 @@ const UploadModal = ({ setModal }) => {
             animate={{ opacity: 1 }}
           >
             {successMsg}
+          </motion.div>
+        )}
+        {error && (
+          <motion.div
+            className="alert-error"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {error}
           </motion.div>
         )}
         <div className="file-placeholder">
