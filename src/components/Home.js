@@ -5,7 +5,7 @@ import ImageGrid from "./ImageGrid";
 import { getArts } from "../Redux/Actions/ArtActionCreator";
 import { connect } from "react-redux";
 
-const Home = ({ getArts }) => {
+const Home = ({ getArts, arts }) => {
   useEffect(() => {
     getArts();
   }, []);
@@ -15,10 +15,25 @@ const Home = ({ getArts }) => {
       <Navbar />
       <div className="container">
         <Header />
-        <ImageGrid />
+        {arts.length > 0 ? (
+          <ImageGrid />
+        ) : (
+          <div
+            className="alert-error"
+            style={{ textAlign: "center", margin: "3rem 0" }}
+          >
+            No arts to show!!! 😶😶{" "}
+          </div>
+        )}
       </div>
     </>
   );
 };
 
-export default connect(null, { getArts })(Home);
+const mapStateToProps = (state) => {
+  return {
+    arts: state.art.arts,
+  };
+};
+
+export default connect(mapStateToProps, { getArts })(Home);

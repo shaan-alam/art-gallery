@@ -80,7 +80,7 @@ const Login = ({
           </a>
           <AnimatePresence>
             {modal && <PasswordReset setModal={setModal} />}
-          </AnimatePresence>
+          </AnimatePresence> 
         </div>
         <div className="divider"></div>
         <div className="signup-link">
