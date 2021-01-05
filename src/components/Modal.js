@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Modal = ({ children, setModal }) => {
+const Modal = ({ children }) => {
   return (
     <motion.div
       className="modal-backdrop"

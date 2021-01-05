@@ -51,7 +51,7 @@ const UploadModal = ({ setModal }) => {
   };
 
   return (
-    <Modal setModal={setModal}>
+    <Modal>
       <motion.div
         className="upload-modal-container"
         variants={uploadModalVariants}

@@ -90,7 +90,7 @@ const Signup = ({
                 src="https://img.icons8.com/color/452/google-logo.png"
                 alt="Google"
               />{" "}
-              <span>oogle</span>
+              <span>Google</span>
             </a>
           </div>
         </div>
