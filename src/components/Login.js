@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import PasswordReset from "./PasswordReset";
 import { AnimatePresence } from "framer-motion";
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 const Login = ({
   signInWithEmailAndPassword,
@@ -25,6 +26,7 @@ const Login = ({
 
     setIsAuthenticating(true);
 
+    // Signing in with email
     signInWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value,
@@ -44,6 +46,9 @@ const Login = ({
     <section className="login-section">
       <div className="login-container">
         <h1>Login</h1>
+        <button className="bg-blue-700 text-white p-3 rounded-lg shadow ">
+          Tailwind button
+        </button>
         {error && <div className="alert-error">{error.message}</div>}
         <form onSubmit={handleFormVerification}>
           <div className="form-group">
@@ -80,7 +85,7 @@ const Login = ({
           </a>
           <AnimatePresence>
             {modal && <PasswordReset setModal={setModal} />}
-          </AnimatePresence> 
+          </AnimatePresence>
         </div>
         <div className="divider"></div>
         <div className="signup-link">
@@ -89,15 +94,11 @@ const Login = ({
           </p>
         </div>
         <div className="oauth">
-          <h3>Or Login using</h3>
           <div className="oauth-links">
-            <a href="#!" onClick={handleGoogleLogin}>
-              <img
-                src="https://img.icons8.com/color/452/google-logo.png"
-                alt="Google"
-              />{" "}
-              <span>Google</span>
-            </a>
+            <GoogleLoginButton
+              onClick={handleGoogleLogin}
+              className="login__google"
+            />
           </div>
         </div>
       </div>
