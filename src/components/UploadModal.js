@@ -4,8 +4,7 @@ import useStorage from "../Hooks/useStorage";
 import ProgressBar from "./ProgressBar";
 import { motion } from "framer-motion";
 
-// Commit for JAN 3, 2021
-// Commit for JAN 4, 2021
+
 const uploadModalVariants = {
   initial: {
     opacity: 0,

@@ -1,15 +1,8 @@
-import { motion } from "framer-motion";
-
 const Art = ({ art }) => {
   return (
     <div className="art">
       <div className="art-img">
-        <motion.img
-          src={art.url}
-          alt="An Art"
-          initial={{ opacity: 0.8 }}
-          whileHover={{ opacity: 1 }}
-        />
+        <img src={art.url} alt="An Art" />
       </div>
       <div className="uploaded-by">
         <img
