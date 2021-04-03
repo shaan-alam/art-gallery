@@ -22,7 +22,7 @@ nav .container ul {
   display: none;
 }
 
-@media screen and (max-width: 636px) {
+@media screen and (max-width: 800px) {
   /* Show hamburger menu */
   .hamburger {
     display: block;

@@ -2,15 +2,22 @@ const Art = ({ art }) => {
   return (
     <div className="border border-2 border-gray-200 shadow-md rounded-md mt-8">
       <div className="art-img">
-        <img src={art.url} alt="An Art" className="w-full rounded-tl-md rounded-tr-md" />
+        <img
+          src={art.url}
+          alt="An Art"
+          className="w-full rounded-tl-md rounded-tr-md"
+        />
       </div>
       <div className="flex items-center">
-        <img className="rounded-full w-8 h-8 mx-2 my-4"
+        <img
+          className="rounded-full w-8 h-8 mx-2 my-4"
           src={art.uploadedBy.photoURL}
           alt={art.uploadedBy.displayName}
           title={art.uploadedBy.displayName}
         />
-        <p>{art.uploadedBy.displayName}</p>
+        <p>
+          {art.uploadedBy.displayName} 
+        </p>
       </div>
     </div>
   );
