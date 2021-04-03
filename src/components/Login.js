@@ -36,17 +36,17 @@ const Login = ({
     setIsAuthenticating(false);
   };
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-
-    signupWithGoogle(() => history.push("/"));
-  };
+  const handleGoogleLogin = () => signupWithGoogle(() => history.push("/"));
 
   return (
     <section className="h-screen w-screen flex justify-center items-center">
       <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
         <h1 className="text-indigo-700 text-4xl font-bold my-8">Login</h1>
-        {error && <div className="alert-error">{error.message}</div>}
+        {error && (
+          <div className="bg-red-100 text-red-700  py-2 px-4 rounded-md">
+            {error}
+          </div>
+        )}
         <form onSubmit={handleFormVerification}>
           <div className="form-group">
             <input
