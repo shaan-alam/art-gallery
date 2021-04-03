@@ -41,7 +41,7 @@ const Signup = ({
 
   return (
     <section className="h-screen w-screen flex justify-center items-center">
-      <div className="w-1/4 py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
+      <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
         <h1 className="text-indigo-700 text-4xl font-bold my-8">Signup</h1>
         {error && <div className="alert-error">{error.message}</div>}
         <form onSubmit={handleFormVerification}>
@@ -88,10 +88,7 @@ const Signup = ({
         <div className="mt-2">
           <h3 className="text-gray-400 my-3 text-2xl">OR</h3>
           <div className="my-3">
-            <GoogleLoginButton
-              onClick={handleGoogleLogin}
-              className="login__google"
-            />
+            <GoogleLoginButton onClick={handleGoogleLogin} />
           </div>
         </div>
       </div>

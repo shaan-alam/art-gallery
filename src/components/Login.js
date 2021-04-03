@@ -44,7 +44,7 @@ const Login = ({
 
   return (
     <section className="h-screen w-screen flex justify-center items-center">
-      <div className="w-1/4 py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
+      <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
         <h1 className="text-indigo-700 text-4xl font-bold my-8">Login</h1>
         {error && <div className="alert-error">{error.message}</div>}
         <form onSubmit={handleFormVerification}>
@@ -90,12 +90,9 @@ const Login = ({
             {modal && <PasswordReset setModal={setModal} />}
           </AnimatePresence>
         </div>
-        <h4 className="text-gray-400 my-8 text-2xl">OR</h4>
+        <h4 className="text-gray-400 my-6 text-2xl">OR</h4>
         <div className="my-4">
-          <GoogleLoginButton
-            onClick={handleGoogleLogin}
-            className="login__google"
-          />
+          <GoogleLoginButton onClick={handleGoogleLogin} />
         </div>
       </div>
     </section>
