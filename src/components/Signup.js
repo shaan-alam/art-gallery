@@ -33,11 +33,7 @@ const Signup = ({
     setIsAuthenticating(false);
   };
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-
-    signupWithGoogle(() => history.push("/"));
-  };
+  const handleGoogleLogin = () => signupWithGoogle(() => history.push("/"));
 
   return (
     <section className="h-screen w-screen flex justify-center items-center">
