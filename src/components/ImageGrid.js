@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ImageGrid = ({ arts }) => {
   return (
-    <motion.div className="sm:grid grid-cols-3 gap-8 px-6"  layout>
+    <motion.div className="sm:grid grid-cols-3 gap-8 px-6" layout>
       {arts.map((art) => (
         <Art art={art} key={art.id} />
       ))}

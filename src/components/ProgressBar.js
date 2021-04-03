@@ -7,7 +7,6 @@ const ProgressBar = ({ progress }) => {
         className="bg-indigo-700 h-full rounded-lg"
         style={{ width: `${progress}%` }}
       ></motion.div>
-      {/* <p>Uploading {progress}%</p> */}
     </div>
   );
 };

@@ -4,13 +4,13 @@ import { connect } from "react-redux";
 import { logout } from "../Redux/Actions/AuthActionCreators";
 import UploadModal from "./UploadModal";
 import { AnimatePresence } from "framer-motion";
-import Avatar from "@material-ui/core/Avatar";
 import AddIcon from "@material-ui/icons/Add";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import MenuIcon from "@material-ui/icons/Menu";
+import "../assets/css/navbar.css";
 
 const Navbar = ({ currentUser, logout }) => {
-  const [navMenu, setNavMenu] = useState(false);
-  const [navSubMenu, setNavSubMenu] = useState(false);
+  const [menu, setMenu] = useState("");
   const [modal, setModal] = useState(false);
 
   const history = useHistory();
@@ -22,27 +22,37 @@ const Navbar = ({ currentUser, logout }) => {
 
   const handleModal = (e) => {
     e.preventDefault();
+
+    setMenu(false);
     setModal(true);
   };
 
+  const toggleHamMenu = (e) => {
+    e.preventDefault();
+    setMenu(!menu);
+  };
+
   return (
-    <nav>
-      <div className="w-full flex justify-between items-center m-auto bg-white shadow-sm py-4 border border-gray-200">
-        <div className="flex-2 text-center  w-1/2">
-          <h1 className="font-bold text-3xl text-indigo-700">Art Gallery</h1>
+    <nav className="w-screen shadow-sm border border-gray-200">
+      <div className="container">
+        <div className="heading">
+          <h2 className="font-bold text-3xl text-indigo-700">Art Gallery</h2>
         </div>
-        <ul className="flex-1 w-1/4 flex justify-around">
-          <li className="py-2 px-3 text-md text-indigo-700 rounded-md bg-indigo-100 transition-all hover:bg-indigo-700 hover:text-white">
+        <ul className={`${menu ? "visible" : ""}`}>
+          <li>
             <Link to="/" activeClass="text-black" onClick={handleModal}>
               <AddIcon /> Upload
             </Link>
           </li>
-          <li className="py-2 px-3 text-md text-indigo-700 rounded-md bg-indigo-100 transition-all hover:bg-indigo-700 hover:text-white">
+          <li>
             <Link to="/" activeClass="text-black" onClick={handleLogout}>
               <ExitToAppIcon /> Logout
             </Link>
           </li>
         </ul>
+        <a href="#!" className="hamburger" onClick={toggleHamMenu}>
+          <MenuIcon />
+        </a>
       </div>
       <AnimatePresence>
         {modal && <UploadModal setModal={setModal} />}
