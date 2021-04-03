@@ -36,9 +36,6 @@ const Navbar = ({ currentUser, logout }) => {
             <Link to="/" activeClass="text-black" onClick={handleModal}>
               <AddIcon /> Upload
             </Link>
-            <AnimatePresence>
-              {modal && <UploadModal setModal={setModal} />}
-            </AnimatePresence>
           </li>
           <li className="py-2 px-3 text-md text-indigo-700 rounded-md bg-indigo-100 transition-all hover:bg-indigo-700 hover:text-white">
             <Link to="/" activeClass="text-black" onClick={handleLogout}>
@@ -47,6 +44,9 @@ const Navbar = ({ currentUser, logout }) => {
           </li>
         </ul>
       </div>
+      <AnimatePresence>
+        {modal && <UploadModal setModal={setModal} />}
+      </AnimatePresence>
     </nav>
   );
 };
