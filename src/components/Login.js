@@ -43,19 +43,16 @@ const Login = ({
   };
 
   return (
-    <section className="login-section">
-      <div className="login-container">
-        <h1>Login</h1>
-        <button className="bg-blue-700 text-white p-3 rounded-lg shadow ">
-          Tailwind button
-        </button>
+    <section className="h-screen w-screen flex justify-center items-center">
+      <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
+        <h1 className="text-indigo-700 text-4xl font-bold my-8">Login</h1>
         {error && <div className="alert-error">{error.message}</div>}
         <form onSubmit={handleFormVerification}>
           <div className="form-group">
             <input
               type="email"
               ref={emailRef}
-              className="form-controls"
+              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Email"
             />
           </div>
@@ -63,43 +60,42 @@ const Login = ({
             <input
               type="password"
               ref={passwordRef}
-              className="form-controls"
+              className="focus:outline-none bg-gray-200 focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Choose a Password"
             />
           </div>
           <button
             type="submit"
             disabled={isAuthenticating}
-            className="auth-btn btn-primary"
+            className="my-2 bg-indigo-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-indigo-600"
           >
             {isAuthenticating ? "Authenticating..." : "Login"}
           </button>
         </form>
-        <div className="forgot-pass-link-container">
+        <div className="mt-10">
           <a
             href="#!"
-            className="forgot-pass-link"
+            className="text-gray-500 transition:all hover:text-indigo-500"
             onClick={() => setModal(true)}
           >
             Forgot Password
           </a>
+          <p className="my-2 text-gray-500">
+            Not a member yet?
+            <Link to="/signup" className="ml-1 hover:text-indigo-700">
+              Signup here
+            </Link>
+          </p>
           <AnimatePresence>
             {modal && <PasswordReset setModal={setModal} />}
           </AnimatePresence>
         </div>
-        <div className="divider"></div>
-        <div className="signup-link">
-          <p>
-            Not a member yet? <Link to="/signup">Signup here</Link>
-          </p>
-        </div>
-        <div className="oauth">
-          <div className="oauth-links">
-            <GoogleLoginButton
-              onClick={handleGoogleLogin}
-              className="login__google"
-            />
-          </div>
+        <h4 className="text-gray-400 my-8 text-2xl">OR</h4>
+        <div className="my-4">
+          <GoogleLoginButton
+            onClick={handleGoogleLogin}
+            className="login__google"
+          />
         </div>
       </div>
     </section>
