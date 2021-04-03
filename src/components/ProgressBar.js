@@ -2,13 +2,11 @@ import { motion } from "framer-motion";
 
 const ProgressBar = ({ progress }) => {
   return (
-    <div className="progress-bar-container">
+    <div className="h-2 rounded-lg my-3">
       <motion.div
-        className="progress"
-        initial={{ width: 0 }}
-        animate={{ width: `${progress}%` }}
+        className="bg-indigo-700 h-full rounded-lg"
+        style={{ width: `${progress}%` }}
       ></motion.div>
-      <p>Uploading {progress}%</p>
     </div>
   );
 };

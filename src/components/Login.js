@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import PasswordReset from "./PasswordReset";
 import { AnimatePresence } from "framer-motion";
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 const Login = ({
   signInWithEmailAndPassword,
@@ -25,6 +26,7 @@ const Login = ({
 
     setIsAuthenticating(true);
 
+    // Signing in with email
     signInWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value,
@@ -34,23 +36,23 @@ const Login = ({
     setIsAuthenticating(false);
   };
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-
-    signupWithGoogle(() => history.push("/"));
-  };
+  const handleGoogleLogin = () => signupWithGoogle(() => history.push("/"));
 
   return (
-    <section className="login-section">
-      <div className="login-container">
-        <h1>Login</h1>
-        {error && <div className="alert-error">{error.message}</div>}
+    <section className="h-screen w-screen flex justify-center items-center">
+      <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
+        <h1 className="text-indigo-700 text-4xl font-bold my-8">Login</h1>
+        {error && (
+          <div className="bg-red-100 text-red-700  py-2 px-4 rounded-md">
+            {error}
+          </div>
+        )}
         <form onSubmit={handleFormVerification}>
           <div className="form-group">
             <input
               type="email"
               ref={emailRef}
-              className="form-controls"
+              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Email"
             />
           </div>
@@ -58,47 +60,39 @@ const Login = ({
             <input
               type="password"
               ref={passwordRef}
-              className="form-controls"
+              className="focus:outline-none bg-gray-200 focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Choose a Password"
             />
           </div>
           <button
             type="submit"
             disabled={isAuthenticating}
-            className="auth-btn btn-primary"
+            className="my-2 bg-indigo-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-indigo-600"
           >
             {isAuthenticating ? "Authenticating..." : "Login"}
           </button>
         </form>
-        <div className="forgot-pass-link-container">
+        <div className="mt-10">
           <a
             href="#!"
-            className="forgot-pass-link"
+            className="text-gray-500 transition:all hover:text-indigo-500"
             onClick={() => setModal(true)}
           >
             Forgot Password
           </a>
+          <p className="my-2 text-gray-500">
+            Not a member yet?
+            <Link to="/signup" className="ml-1 hover:text-indigo-700">
+              Signup here
+            </Link>
+          </p>
           <AnimatePresence>
             {modal && <PasswordReset setModal={setModal} />}
-          </AnimatePresence> 
+          </AnimatePresence>
         </div>
-        <div className="divider"></div>
-        <div className="signup-link">
-          <p>
-            Not a member yet? <Link to="/signup">Signup here</Link>
-          </p>
-        </div>
-        <div className="oauth">
-          <h3>Or Login using</h3>
-          <div className="oauth-links">
-            <a href="#!" onClick={handleGoogleLogin}>
-              <img
-                src="https://img.icons8.com/color/452/google-logo.png"
-                alt="Google"
-              />{" "}
-              <span>Google</span>
-            </a>
-          </div>
+        <h4 className="text-gray-400 my-6 text-2xl">OR</h4>
+        <div className="my-4">
+          <GoogleLoginButton onClick={handleGoogleLogin} />
         </div>
       </div>
     </section>

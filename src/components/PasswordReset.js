@@ -36,27 +36,36 @@ const PasswordReset = ({ setModal }) => {
   return (
     <Modal setModal={setModal}>
       <motion.div
-        className="password-reset-link-container"
+        className="bg-white px-4 py-8 rounded-md relative"
         variants={modalVariants}
         initial="initial"
         animate="animate"
         exit="exit"
         transition="transition"
       >
-        <a href="#!" onClick={() => setModal(false)} className="close-modal">
+        <a
+          href="#!"
+          onClick={() => setModal(false)}
+          className="absolute top-5 right-5"
+        >
           <i className="fa fa-times"></i>
         </a>
-        <h3>Password Reset</h3>
+        <h3 className="my-4 text-indigo-700 font-bold text-xl">
+          Password Reset
+        </h3>
         {error && <div className="alert-error">{error.message}</div>}
         {successMsg && <div className="alert-success">{successMsg}</div>}
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="form-controls"
+          className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all block"
           placeholder="Your Email"
         />
-        <button onClick={handlePasswordReset} className="btn-primary">
+        <button
+          onClick={handlePasswordReset}
+          className="my-2 bg-indigo-700 py-4 px-8 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-indigo-600"
+        >
           Send Password Reset Link
         </button>
       </motion.div>
