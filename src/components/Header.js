@@ -5,8 +5,6 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Art Gallery</h1>
-      <h5>See your perfect Art here!!!</h5>
       {/* <form action="">
         <input
           type="text"

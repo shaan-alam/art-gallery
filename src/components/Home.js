@@ -13,16 +13,13 @@ const Home = ({ getArts, arts }) => {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <Header />
+      <div className="container w-8/10 mx-auto my-10">
+        {/* <Header /> */}
         {arts.length > 0 ? (
           <ImageGrid />
         ) : (
-          <div
-            className="alert-error"
-            style={{ textAlign: "center", margin: "3rem 0" }}
-          >
-            No arts to show!!! 😶😶{" "}
+          <div className="bg-gray-400  font-bold text-lg text-center mx-auto py-3 rounded">
+            No arts to show!!! 
           </div>
         )}
       </div>
