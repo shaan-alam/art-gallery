@@ -58,7 +58,7 @@ const UploadModal = ({ setModal }) => {
   return (
     <Modal>
       <motion.div
-        className="bg-white rounded-md px-8 py-2 relative h-1/2 w-1/2"
+        className="bg-white rounded-md px-8 py-2 relative h-1/2 sm:w-1/2 w-3/4"
         variants={uploadModalVariants}
         initial="initial"
         animate="animate"
@@ -72,7 +72,7 @@ const UploadModal = ({ setModal }) => {
         >
           <i className="fa fa-times"></i>
         </a>
-        <h1 className="text-center text-indigo-700 my-7 text-3xl font-bold">
+        <h1 className="text-center text-indigo-700 my-7 sm:text-3xl font-bold text-2xl">
           Upload an Art!
         </h1>
         {successMsg && (

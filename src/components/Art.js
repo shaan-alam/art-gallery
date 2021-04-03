@@ -1,11 +1,11 @@
 const Art = ({ art }) => {
   return (
-    <div className="art">
+    <div className="border border-2 border-gray-200 shadow-md rounded-md mt-8">
       <div className="art-img">
-        <img src={art.url} alt="An Art" />
+        <img src={art.url} alt="An Art" className="w-full rounded-tl-md rounded-tr-md" />
       </div>
-      <div className="uploaded-by">
-        <img
+      <div className="flex items-center">
+        <img className="rounded-full w-8 h-8 mx-2 my-4"
           src={art.uploadedBy.photoURL}
           alt={art.uploadedBy.displayName}
           title={art.uploadedBy.displayName}
