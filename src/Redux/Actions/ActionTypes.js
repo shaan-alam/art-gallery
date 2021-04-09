@@ -5,6 +5,7 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const SET_IS_AUTHENTICATING = "SET_IS_AUTHENTICATING";
 
 export const SET_USER = "SET_USER";
 

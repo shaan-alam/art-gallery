@@ -38,7 +38,7 @@ const Signup = ({
   return (
     <section className="h-screen w-screen flex justify-center items-center">
       <div className="py-8 px-12 text-center rounded-md shadow-md border border-gray-200">
-        <h1 className="text-indigo-700 text-4xl font-bold my-8">Signup</h1>
+        <h1 className="text-blue-700 text-4xl font-bold my-8">Signup</h1>
         {error && (
           <div className="bg-red-100 text-red-700  py-2 px-4 rounded-md">
             {error}
@@ -49,7 +49,7 @@ const Signup = ({
             <input
               type="email"
               ref={emailRef}
-              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
+              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Email"
             />
           </div>
@@ -57,7 +57,7 @@ const Signup = ({
             <input
               type="password"
               ref={passwordRef}
-              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
+              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Choose a Password"
             />
           </div>
@@ -65,14 +65,14 @@ const Signup = ({
             <input
               type="password"
               ref={passwordConfirmRef}
-              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all"
+              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all"
               placeholder="Confirm Password"
             />
           </div>
           <button
             type="submit"
             disabled={isAuthenticating}
-            className="my-2 bg-indigo-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-indigo-600"
+            className="my-2 bg-blue-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-blue-600"
           >
             {isAuthenticating ? "Authenticating..." : "Signup"}
           </button>
@@ -80,7 +80,7 @@ const Signup = ({
         <div className="mt-10">
           <p className="my-2 text-gray-500">
             Already have an account?{" "}
-            <Link to="/login" className="ml-1 hover:text-indigo-700">
+            <Link to="/login" className="ml-1 hover:text-blue-700">
               Login here
             </Link>
           </p>

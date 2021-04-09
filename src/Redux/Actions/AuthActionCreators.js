@@ -12,14 +12,31 @@ import {
   LOGOUT_FAIL,
   LOGOUT_SUCCESS,
   SET_USER,
+  SET_IS_AUTHENTICATING,
 } from "./ActionTypes";
 
-export const setUser = (user) => {
-  console.log("actions", user);
+export const setIsAuthenticating = (isAuthenticating) => {
   return {
-    type: SET_USER,
-    payload: user,
+    type: SET_IS_AUTHENTICATING,
+    payload: isAuthenticating,
   };
+};
+
+export const setUser = (redirect) => (dispatch) => {
+  dispatch(setIsAuthenticating(true));
+
+  console.log("reached to setUser function");
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // Redirect to the home page
+      redirect();
+
+      dispatch({ type: SET_USER, payload: user });
+    } else {
+      dispatch(setIsAuthenticating(false));
+    }
+  });
 };
 
 export const logout = (redirect) => (dispatch) => {
@@ -37,6 +54,9 @@ export const logout = (redirect) => (dispatch) => {
 export const signupWithEmailAndPassword = (email, password, redirect) => (
   dispatch
 ) => {
+  // Set is authenticating to true
+  dispatch(setIsAuthenticating(true));
+
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((user) => {

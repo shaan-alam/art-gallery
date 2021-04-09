@@ -5,10 +5,12 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   SET_USER,
+  SET_IS_AUTHENTICATING,
 } from "../Actions/ActionTypes";
 
 const initialState = {
   currentUser: null,
+  isAuthenticating: false,
 };
 
 function AuthReducer(state = initialState, action) {
@@ -26,6 +28,7 @@ function AuthReducer(state = initialState, action) {
       return {
         ...state,
         currentUser: action.payload,
+        isAuthenticating: false,
       };
 
     case LOGOUT_SUCCESS:
@@ -34,6 +37,11 @@ function AuthReducer(state = initialState, action) {
         currentUser: {},
       };
 
+    case SET_IS_AUTHENTICATING:
+      return {
+        ...state,
+        isAuthenticating: action.payload,
+      };
     default:
       return state;
   }

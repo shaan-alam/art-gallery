@@ -18,7 +18,7 @@ const App = ({ error, clearErrors }) => {
 
   return (
     <Switch>
-      <Route path="/" component={Home} exact />
+      <PrivateRoute path="/" component={Home} exact />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
     </Switch>
