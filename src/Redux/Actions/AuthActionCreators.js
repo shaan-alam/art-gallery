@@ -13,6 +13,7 @@ import {
   LOGOUT_SUCCESS,
   SET_USER,
   SET_IS_AUTHENTICATING,
+  CLEAR_ARTS,
 } from "./ActionTypes";
 
 export const setIsAuthenticating = (isAuthenticating) => {
@@ -43,6 +44,7 @@ export const logout = (redirect) => (dispatch) => {
   auth
     .signOut()
     .then(() => {
+      dispatch({ type: CLEAR_ARTS });
       dispatch({ type: LOGOUT_SUCCESS });
       redirect();
     })

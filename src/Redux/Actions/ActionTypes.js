@@ -15,3 +15,4 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 // Arts related action types
 export const GET_ARTS = "GET_ARTS";
+export const CLEAR_ARTS = "CLEAR_ARTS";
