@@ -41,10 +41,9 @@ const Login = ({
     signInWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value,
-      () => history.push("/")
+      () => history.push("/"),
+      () => setAuthenticatingForm(false)
     );
-
-    setIsAuthenticating(false);
   };
 
   const handleGoogleLogin = () => signupWithGoogle(() => history.push("/"));
@@ -84,7 +83,11 @@ const Login = ({
             disabled={isAuthenticating}
             className="my-2 bg-blue-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-blue-600"
           >
-            {authenticatingForm ? <CircularProgress color="inherit" size={20} />  : "Login"}
+            {authenticatingForm ? (
+              <CircularProgress color="inherit" size={20} />
+            ) : (
+              "Login"
+            )}
           </button>
         </form>
         <div className="mt-10">
@@ -117,7 +120,6 @@ const Login = ({
 const mapStateToProps = (state) => {
   return {
     error: state.error.error,
-    currentUser: state.auth.currentUser,
     isAuthenticating: state.auth.isAuthenticating,
   };
 };

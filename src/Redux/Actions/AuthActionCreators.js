@@ -1,6 +1,3 @@
-// Login
-// Logout
-// Sign up
 import { auth } from "../../firebase/config";
 import firebase from "firebase";
 
@@ -25,8 +22,6 @@ export const setIsAuthenticating = (isAuthenticating) => {
 
 export const setUser = (redirect) => (dispatch) => {
   dispatch(setIsAuthenticating(true));
-
-  console.log("reached to setUser function");
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -53,28 +48,42 @@ export const logout = (redirect) => (dispatch) => {
     });
 };
 
-export const signupWithEmailAndPassword = (email, password, redirect) => (
-  dispatch
-) => {
+export const signupWithEmailAndPassword = (
+  email,
+  username,
+  password,
+  redirect,
+  disableLoading
+) => (dispatch) => {
   // Set is authenticating to true
   dispatch(setIsAuthenticating(true));
 
   auth
     .createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log(user);
-      dispatch({
-        type: AUTH_SUCCESS,
-        payload: user,
-      });
+    .then((result) => {
+      // Disable form loading
+      disableLoading();
 
-      // Redirect the user to homepage
-      redirect();
+      result.user
+        .updateProfile({ displayName: username })
+        .then(() => {
+          dispatch({
+            type: AUTH_SUCCESS,
+            payload: result.user,
+          });
+        })
+        .then(() => {
+          // Reirect the user to homepage
+          redirect();
+        });
     })
     .catch((err) => {
+      // Disable form loading
+      disableLoading();
+
       dispatch({
         type: AUTH_FAIL,
-        payload: err,
+        payload: err.message,
       });
     });
 };
@@ -100,17 +109,24 @@ export const signupWithGoogle = (redirect) => (dispatch) => {
     });
 };
 
-export const signInWithEmailAndPassword = (email, password, redirect) => (
-  dispatch
-) => {
+export const signInWithEmailAndPassword = (
+  email,
+  password,
+  redirect,
+  disableLoading
+) => (dispatch) => {
   auth
     .signInWithEmailAndPassword(email, password)
     .then((result) => {
+      // Disable form loading
+      disableLoading();
+
       dispatch({ type: LOGIN_SUCCESS, payload: result.user });
 
       redirect();
     })
     .catch((err) => {
+      disableLoading();
       dispatch({ type: LOGIN_FAIL, payload: err });
     });
 };

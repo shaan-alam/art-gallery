@@ -6,34 +6,41 @@ import {
 } from "../Redux/Actions/AuthActionCreators";
 import { Link } from "react-router-dom";
 import { GoogleLoginButton } from "react-social-login-buttons";
+import LoadingPage from "./LoadingPage";
+import { CircularProgress } from "@material-ui/core";
 
 const Signup = ({
   signupWithEmailAndPassword,
   error,
   history,
   signupWithGoogle,
+  isAuthenticating,
 }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+  const usernameRef = useRef();
 
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [authenticatingForm, setAuthenticatingForm] = useState(false);
 
   const handleFormVerification = (e) => {
     e.preventDefault();
 
-    setIsAuthenticating(true);
+    setAuthenticatingForm(true);
 
     signupWithEmailAndPassword(
       emailRef.current.value,
+      usernameRef.current.value,
       passwordRef.current.value,
-      () => history.push("/")
+      () => history.push("/"),
+      () => setAuthenticatingForm(false)
     );
-
-    setIsAuthenticating(false);
   };
 
   const handleGoogleLogin = () => signupWithGoogle(() => history.push("/"));
+
+  if (isAuthenticating) {
+    return <LoadingPage />;
+  }
 
   return (
     <section className="h-screen w-screen flex justify-center items-center">
@@ -53,6 +60,12 @@ const Signup = ({
               placeholder="Email"
             />
           </div>
+          <input
+            type="text"
+            ref={usernameRef}
+            className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all"
+            placeholder="Username"
+          />
           <div className="form-group">
             <input
               type="password"
@@ -61,20 +74,16 @@ const Signup = ({
               placeholder="Choose a Password"
             />
           </div>
-          <div className="form-group">
-            <input
-              type="password"
-              ref={passwordConfirmRef}
-              className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all"
-              placeholder="Confirm Password"
-            />
-          </div>
           <button
             type="submit"
-            disabled={isAuthenticating}
+            disabled={authenticatingForm}
             className="my-2 bg-blue-700 py-4 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-blue-600"
           >
-            {isAuthenticating ? "Authenticating..." : "Signup"}
+            {authenticatingForm ? (
+              <CircularProgress color="inherit" size={20} />
+            ) : (
+              "Signup"
+            )}
           </button>
         </form>
         <div className="mt-10">

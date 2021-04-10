@@ -50,21 +50,19 @@ const PasswordReset = ({ setModal }) => {
         >
           <i className="fa fa-times"></i>
         </a>
-        <h3 className="my-4 text-indigo-700 font-bold text-xl">
-          Password Reset
-        </h3>
+        <h3 className="my-4 text-blue-700 font-bold text-xl">Password Reset</h3>
         {error && <div className="alert-error">{error.message}</div>}
         {successMsg && <div className="alert-success">{successMsg}</div>}
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-indigo-400 px-2 py-3 w-full my-2 rounded-md transition-all block"
+          className="focus:outline-none bg-gray-200 focus:ring-inset focus:ring-4 focus:ring-blue-400 px-2 py-3 w-full my-2 rounded-md transition-all block"
           placeholder="Your Email"
         />
         <button
           onClick={handlePasswordReset}
-          className="my-2 bg-indigo-700 py-4 px-8 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-indigo-600"
+          className="my-2 bg-blue-700 py-4 px-8 text-white font-bold w-100 rounded-md w-full transition:all duration-500 hover:bg-blue-600"
         >
           Send Password Reset Link
         </button>

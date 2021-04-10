@@ -1,3 +1,5 @@
+import { Avatar } from "@material-ui/core";
+
 const Art = ({ art }) => {
   return (
     <div className="border border-2 border-gray-200 shadow-md rounded-md mt-8">
@@ -9,8 +11,8 @@ const Art = ({ art }) => {
         />
       </div>
       <div className="flex items-center">
-        <img
-          className="rounded-full w-8 h-8 mx-2 my-4"
+        <Avatar
+          className="rounded-full w-8 h-8 mx-4 my-4"
           src={art.uploadedBy.photoURL}
           alt={art.uploadedBy.displayName}
           title={art.uploadedBy.displayName}
