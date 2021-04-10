@@ -50,7 +50,7 @@ const Navbar = ({ currentUser, logout }) => {
             </Link>
           </li>
         </ul>
-        <Avatar src={currentUser?.photoURL} alt={currentUser?.displayName} />
+        <Avatar className="mx-4" src={currentUser?.photoURL} alt={currentUser?.displayName} />
         <a href="#!" className="hamburger" onClick={toggleHamMenu}>
           <MenuIcon />
         </a>
