@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
-  setIsAuthenticating,
   setUser,
   signInWithEmailAndPassword,
   signupWithGoogle,

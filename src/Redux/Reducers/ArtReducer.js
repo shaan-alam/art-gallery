@@ -1,8 +1,9 @@
-import { CLEAR_ARTS, GET_ARTS } from "../Actions/ActionTypes";
+import { CLEAR_ARTS, GET_ARTS, LOADING_ARTS } from "../Actions/ActionTypes";
 
 // Initial State
 const initialState = {
   arts: [],
+  loading: false,
 };
 
 const ArtReducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const ArtReducer = (state = initialState, action) => {
       return {
         ...state,
         arts: [],
+      };
+
+    case LOADING_ARTS:
+      return {
+        ...state,
+        loading: action.payload,
       };
 
     default:

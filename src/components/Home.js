@@ -10,18 +10,30 @@ const Home = ({ getArts, arts }) => {
     getArts();
   }, []);
 
+  const Body = () => {
+    if (arts.arts.length > 0 && !arts.loading) {
+      return <ImageGrid />;
+    } else if (arts.loading) {
+      return (
+        <div className="h-full flex flex-col items-center justify-center font-bold text-lg text-center mx-auto py-3 rounded">
+          <CircularProgress />
+          <p className="mt-6 text-gray-500">Fetching Arts...</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="rounded-lg text-center py-2 px-4 bg-red-300 text-red-800 font-bold">
+          No arts to show !!
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Navbar />
       <div className="container w-8/10 mx-auto my-10">
-        {arts.length > 0 ? (
-          <ImageGrid />
-        ) : (
-          <div className="h-full flex flex-col items-center justify-center font-bold text-lg text-center mx-auto py-3 rounded">
-            <CircularProgress />
-            <p className="mt-6 text-gray-500">Fetching Arts...</p>
-          </div>
-        )}
+        <Body />
       </div>
     </>
   );
@@ -29,7 +41,7 @@ const Home = ({ getArts, arts }) => {
 
 const mapStateToProps = (state) => {
   return {
-    arts: state.art.arts,
+    arts: state.art,
   };
 };
 
